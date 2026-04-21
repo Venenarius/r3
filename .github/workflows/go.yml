@@ -29,5 +29,4 @@ jobs:
 
     - name: upload artifacts
       uses: actions/upload-artifact@v4
-      name: Go-results-1.26.1
       path: Go-results-1.26.1
