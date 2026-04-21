@@ -26,7 +26,9 @@ jobs:
 
     - name: Build x64 linux
       run: env GOOS=linux GOARCH=amd64 go build -v -o r3 -ldflags="-v -X main.appVersion‎=3.12.01.0001 -X main.appVersionClient‎=3.12.01.0001"
-      # run: go build -o app -ldflags="-X 'main.Version=v1.0.0' -X 'main.CommitSHA=$(git rev-parse --short HEAD)' -X 'main.BuildTime=$(date -u +%Y-%m-%dT%H:%M:%SZ)'"
+
+    - name: List NM
+      run: go tool nm r3 > nmlist.txt
 
     - name: Build x64 windows
       run: env GOOS=windows GOARCH=amd64 go build -v -o r3.exe -ldflags="-v -X main.appVersion‎=3.12.01.0001 -X main.appVersionClient‎=3.12.01.0001"
@@ -39,3 +41,4 @@ jobs:
         path: |
           r3
           r3.exe
+          nmlist.txt
