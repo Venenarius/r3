@@ -39,6 +39,7 @@ func RunIfRequired() error {
 // loop upgrade procedure until DB version matches application version
 func startLoop() error {
 	log.Info(log.ContextServer, "version discrepancy (platform<->database) recognized, starting automatic upgrade")
+	log.Info(log.ContextServer, fmt.Sprintf("AppVersion version '%s'", config.GetAppVersion().Cut))
 
 	for {
 		// abort when versions match
