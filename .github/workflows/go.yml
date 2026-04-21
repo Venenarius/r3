@@ -20,6 +20,14 @@ jobs:
       uses: actions/setup-go@v4
       with:
         go-version: '1.26.1'
+        
+    - name: Setup dependencies
+      run: go get .
 
     - name: Build
       run: go build -v ./...
+
+    - name: upload artifacts
+      uses: actions/upload-artifact@v4
+      name: Go-results-1.26.1
+      path: Go-results-1.26.1
