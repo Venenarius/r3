@@ -24,8 +24,8 @@ jobs:
     - name: Setup dependencies
       run: go get .
 
-    - name: Build
-      run: go build -v ./...
+    - name: Build x64 linux
+      run: env GOOS=linux GOARCH=amd64 go build -v r3.go
 
     - name: upload artifacts
       uses: actions/upload-artifact@v4
