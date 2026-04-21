@@ -25,11 +25,11 @@ jobs:
       run: go get .
 
     - name: Build x64 linux
-      run: env GOOS=linux GOARCH=amd64 go build -v -o r3 -ldflags='-s -w -X "main.appVersion‎=3.12.01.0001" -X "main.appVersionClient‎=3.12.01.0001"'
+      run: env GOOS=linux GOARCH=amd64 go build -v -o r3 -ldflags="-s -w -X 'main.appVersion‎=3.12.01.0001' -X 'main.appVersionClient‎=3.12.01.0001'"
       # run: go build -o app -ldflags="-X 'main.Version=v1.0.0' -X 'main.CommitSHA=$(git rev-parse --short HEAD)' -X 'main.BuildTime=$(date -u +%Y-%m-%dT%H:%M:%SZ)'"
 
     - name: Build x64 windows
-      run: env GOOS=windows GOARCH=amd64 go build -v -o r3.exe -ldflags='-s -w -X "main.appVersion‎=3.12.01.0001" -X "main.appVersionClient‎=3.12.01.0001"'
+      run: env GOOS=windows GOARCH=amd64 go build -v -o r3.exe -ldflags="-s -w -X 'main.appVersion‎=3.12.01.0001' -X 'main.appVersionClient‎=3.12.01.0001'"
 
     - name: upload artifacts
       uses: actions/upload-artifact@v4
