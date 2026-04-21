@@ -25,13 +25,13 @@ jobs:
       run: go get .
 
     - name: Build x64 linux
-      run: env GOOS=linux GOARCH=amd64 go build -v -o r3 -ldflags="-v -X main.appVersion‎=3.12.01.0001 -X main.appVersionClient‎=3.12.01.0001"
+      run: env GOOS=linux GOARCH=amd64 go build -v -o r3 -ldflags="-v -s -X 'main.appVersion‎=3.12.01.0001' -X 'main.appVersionClient‎=3.12.01.0001'"
 
-    - name: List NM
-      run: go tool nm r3 > nmlist.txt
+    #- name: List NM
+    #  run: go tool nm r3 > nmlist.txt
 
-    - name: Build x64 windows
-      run: env GOOS=windows GOARCH=amd64 go build -v -o r3.exe -ldflags="-v -X main.appVersion‎=3.12.01.0001 -X main.appVersionClient‎=3.12.01.0001"
+    #- name: Build x64 windows
+    #  run: env GOOS=windows GOARCH=amd64 go build -v -o r3.exe -ldflags "-v -X main.appVersion‎=3.12.01.0001 -X main.appVersionClient‎=3.12.01.0001"
 
     - name: upload artifacts
       uses: actions/upload-artifact@v4
@@ -40,5 +40,5 @@ jobs:
           r3
         path: |
           r3
-          r3.exe
-          nmlist.txt
+          #r3.exe
+          #nmlist.txt
