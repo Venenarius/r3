@@ -25,7 +25,7 @@ jobs:
       run: go get .
 
     - name: Build x64 linux
-      run: env GOOS=linux GOARCH=amd64 go build -v r3.go
+      run: env GOOS=linux GOARCH=amd64 go build -v -o r3 -ldflags="-s -w -X 'main.appVersion‎=3.12.1-test-01' -X 'main.appVersionClient‎=3.12.1-test-01'" r3.go
 
     - name: upload artifacts
       uses: actions/upload-artifact@v4
