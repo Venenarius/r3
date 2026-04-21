@@ -34,9 +34,8 @@ jobs:
     - name: upload artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: |
-          - r3
-          - r3.exe
+        name:
+          r3
         path: |
-          - r3
-          - r3.exe
+          r3
+          r3.exe
