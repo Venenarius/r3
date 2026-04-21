@@ -36,3 +36,5 @@ jobs:
       with:
         name: r3
         path: r3
+        name: r3.exe
+        path: r3.exe
