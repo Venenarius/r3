@@ -102,6 +102,7 @@ type program struct {
 
 func main() {
 
+	fmt.Printf("appVersion is %s\n", appVersion)
 	// set configuration parameters
 	if err := config.SetAppVersion(appVersion, "service"); err != nil {
 		fmt.Printf("failed to set app version, %v\n", err)
